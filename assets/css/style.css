@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'GTAmerica-ExtendedRegular', Helvetica, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+@font-face {
+    font-family: 'GTAmerica-ExtendedRegular';
+    src: url('/assets/fonts/GTAmerica-ExtendedRegular.eot');
+    src: url('/assets/fonts/GTAmerica-ExtendedRegular.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/GTAmerica-ExtendedRegular.svg#GTAmerica-ExtendedRegular') format('svg'),
+         url('/assets/fonts/GTAmerica-ExtendedRegular.ttf') format('truetype'),
+         url('/assets/fonts/GTAmerica-ExtendedRegular.woff') format('woff'),
+         url('/assets/fonts/GTAmerica-ExtendedRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 5vmin;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes heartbeat {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.5); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+div.ball {
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    animation: heartbeat 5s infinite;
+}
